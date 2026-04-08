@@ -1,0 +1,37 @@
+@using Application.DTOs.Enrollment
+@model EnrollmentCreateDTO
+
+@{
+    ViewData["Title"] = "Derse Kayıt Ol";
+}
+
+<div class="container mt-4">
+    <h2>🎓 Öğrenci Derse Kayıt Formu</h2>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-5 shadow-sm p-4 bg-light rounded">
+            <form asp-action="Create" method="post">
+                @Html.AntiForgeryToken()
+
+                <div asp-validation-summary="ModelOnly" class="text-danger fw-bold mb-3 border border-danger p-2 rounded bg-white" style="display: @(ViewData.ModelState.IsValid ? "none" : "block")"></div>
+
+                <div class="mb-3">
+                    <label asp-for="StudentId" class="form-label fw-bold">Öğrenci ID</label>
+                    <input asp-for="StudentId" type="number" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="CourseId" class="form-label fw-bold">Kayıt Olunacak Ders ID</label>
+                    <input asp-for="CourseId" type="number" class="form-control" required />
+                </div>
+
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="bi bi-check2-circle"></i> Kaydı Tamamla
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

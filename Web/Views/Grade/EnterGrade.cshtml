@@ -1,0 +1,44 @@
+@using Application.DTOs.Grade
+@model GradeDTO
+
+@{
+    ViewData["Title"] = "Not Girişi";
+}
+
+<div class="container mt-4">
+    <h2>📊 Sınav Notu Girişi</h2>
+    <hr />
+
+    <div class="row">
+        <div class="col-md-5 shadow-sm p-4 bg-light rounded">
+            <form asp-action="EnterGrade" method="post">
+                @Html.AntiForgeryToken()
+
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3 fw-bold border border-danger p-2 rounded bg-white" style="display: @(ViewData.ModelState.IsValid ? "none" : "block")"></div>
+
+                <div class="mb-3">
+                    <label asp-for="EnrollmentId" class="form-label fw-bold">Öğrenci Kayıt ID (Enrollment ID)</label>
+                    <input asp-for="EnrollmentId" type="number" class="form-control" required />
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label asp-for="MidtermScore" class="form-label fw-bold">Vize Notu</label>
+                        <input asp-for="MidtermScore" type="number" step="0.01" min="0" max="100" class="form-control" placeholder="Örn: 75.50" />
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="FinalScore" class="form-label fw-bold">Final Notu</label>
+                        <input asp-for="FinalScore" type="number" step="0.01" min="0" max="100" class="form-control" placeholder="Örn: 85.00" />
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="bi bi-calculator"></i> Notu Kaydet ve Hesapla
+                    </button>
+                    <a asp-action="Index" asp-controller="Course" class="btn btn-outline-secondary">İptal</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

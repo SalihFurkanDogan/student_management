@@ -1,0 +1,72 @@
+@using Application.DTOs.Student
+@model StudentCreateDTO
+
+@{
+    ViewData["Title"] = "Öğrenci Ekle (Sistem Testi)";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Yeni Öğrenci Ekle</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        
+                        <h5 class="text-muted border-bottom pb-2 mb-3">Kullanıcı Bilgileri (User)</h5>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="FirstName" class="form-label">Ad</label>
+                                <input asp-for="FirstName" class="form-control" placeholder="Örn: Ali" required />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="LastName" class="form-label">Soyad</label>
+                                <input asp-for="LastName" class="form-control" placeholder="Örn: Yılmaz" required />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">E-Posta Adresi</label>
+                            <input asp-for="Email" type="email" class="form-control" placeholder="ali.yilmaz@okul.edu.tr" required />
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Password" class="form-label">Geçici Şifre</label>
+                            <input asp-for="Password" type="password" class="form-control" placeholder="En az 6 karakter" required />
+                        </div>
+
+                        <h5 class="text-muted border-bottom pb-2 mb-3">Öğrenci Bilgileri (Student)</h5>
+
+                        <div class="mb-3">
+                            <label asp-for="StudentNumber" class="form-label">Öğrenci Numarası</label>
+                            <input asp-for="StudentNumber" class="form-control" placeholder="Örn: 2023001" required />
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label asp-for="DepartmentId" class="form-label">Bölüm ID</label>
+                                <input asp-for="DepartmentId" type="number" class="form-control" value="1" required />
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label asp-for="ClassRoomId" class="form-label">Sınıf ID</label>
+                                <input asp-for="ClassRoomId" type="number" class="form-control" value="1" required />
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label asp-for="SemesterId" class="form-label">Dönem ID</label>
+                                <input asp-for="SemesterId" type="number" class="form-control" value="1" required />
+                            </div>
+                        </div>
+
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-success btn-lg">Sisteme Kaydet ve Test Et</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
