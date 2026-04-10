@@ -17,3 +17,4 @@
 /Users/sfd/Desktop/student-control-system/Infrastructure/obj/Debug/net8.0/Infrastructure.pdb
 /Users/sfd/Desktop/student-control-system/Infrastructure/obj/Debug/net8.0/Infrastructure.genruntimeconfig.cache
 /Users/sfd/Desktop/student-control-system/Infrastructure/obj/Debug/net8.0/ref/Infrastructure.dll
+/Users/sfd/Desktop/student-control-system/Infrastructure/obj/Debug/net8.0/Infrastructure.sourcelink.json

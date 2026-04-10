@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.DTOs.Student;
-using Application.Interfaces;
+using Domain.Interfaces;
 using Application.Services.Interfaces;
 using Domain.Entities;
 using BCrypt.Net;
@@ -51,13 +51,12 @@ namespace Application.Services.Implementations
                 
                 await _studentRepository.AddAsync(student);
                 await _studentRepository.SaveChangesAsync();
-                }
+            }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
 
         }
-        
     }
 }

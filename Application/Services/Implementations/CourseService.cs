@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.DTOs.Course;
-using Application.Interfaces;
+using Domain.Interfaces;
 using Application.Services.Interfaces;
 using AutoMapper;
 using Domain.Entities;

@@ -6,7 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Application.DTOs.Login;
-using Application.Interfaces;
+using Domain.Interfaces;
 using Application.Services.Interfaces;
 using AutoMapper;
 using Domain.Entities;

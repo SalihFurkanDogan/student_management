@@ -4,11 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.Services.Interfaces;
 using Application.DTOs.Enrollment;
-using Application.Interfaces;
+using Domain.Interfaces;
 using Application.Mappers;
 using Application.DTOs.Course;
 using Domain.Entities;
 using Microsoft.VisualBasic;
+using Application.DTOs.Student;
 
 namespace Application.Services.Implementations
 {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 namespace Application.DTOs.Student
 {
     public record StudentDashboardDTO(
+        int Id,
         string FirstName,
         string LastName,
         string Email,
